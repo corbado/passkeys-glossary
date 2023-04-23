@@ -62,7 +62,11 @@ const config = {
     /** @type {import('@docusaurus/preset-classic').ThemeConfig} */
         ({
             // Replace with your project's social card
-            image: 'img/docusaurus-social-card.jpg',
+            image: 'img/passkeys.webp',
+            metadata: [{
+                name: 'keywords',
+                content: 'passkeys, passkey, passwordless, webauthn, fido2, authentication, CIAM, implementation, guides'
+            }],
             navbar: {
                 title: 'Passkeys Glossary',
                 logo: {

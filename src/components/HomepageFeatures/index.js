@@ -5,7 +5,7 @@ import styles from './styles.module.css';
 const FeatureList = [
   {
     title: 'Great UX',
-    Svg: require('@site/static/img/undraw_docusaurus_mountain.svg').default,
+    Svg: require('@site/static/img/great-ux.svg').default,
     description: (
       <>
         Let your users log into your website with Face ID or Touch ID.
@@ -14,7 +14,7 @@ const FeatureList = [
   },
   {
     title: 'Secure',
-    Svg: require('@site/static/img/undraw_docusaurus_tree.svg').default,
+    Svg: require('@site/static/img/secure.svg').default,
     description: (
       <>
         Prevent any password-based attack, like phishing or credential stuffing.
@@ -22,8 +22,8 @@ const FeatureList = [
     ),
   },
   {
-    title: 'Based on open standard',
-    Svg: require('@site/static/img/undraw_docusaurus_react.svg').default,
+    title: 'Based on open standards',
+    Svg: require('@site/static/img/FIDO-Allianz_logo.svg').default,
     description: (
       <>
        Developed by the <a href="https://fidoalliance.org/">FIDO alliance</a>, passkeys are backed by the largest companies.
