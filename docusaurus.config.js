@@ -95,8 +95,16 @@ const config = {
                         title: 'Docs',
                         items: [
                             {
-                                label: 'WebAuthn',
+                                label: 'Intro',
                                 to: '/docs/intro',
+                            },
+                            {
+                                label: 'WebAuthn',
+                                to: '/docs/category/webauthn',
+                            },
+                            {
+                                label: 'Implementation',
+                                to: '/docs/category/implementation',
                             },
                         ],
                     },
