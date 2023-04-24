@@ -4,20 +4,18 @@ sidebar_position: 3
 
 # iOS
 
-The implementation for Flutter iOS is still very similiar to native iOS with Swift, as there is no good Flutter SDK for
+The implementation for Flutter iOS is still very similar to native iOS with Swift, as there is no good Flutter SDK for
 Passkeys / WebAuthn yet.
 
 ## Origin
 
-TODO
+Contrary to Android, the origin for WebAuthn doesn't require a specific format and is a regular URL,
+e.g. `pro-xxx.auth.corbado.com`.
 
-## Binding passkeys to your own domain
+## Apple App Site Association (AASA)
 
-If you want to bind the passkeys to your own domain (e.g. `acme.com`), you need to manually change
-the [WebAuthn relying party](https://www.w3.org/TR/webauthn-2/#webauthn-relying-party) and host
-the `apple-app-site-association.json` file on this domain (so on `acme.com/.well-known/apple-app-site-association`).
-
-Moreover, you need to associate your native app in the `apple-app-site-association.json` file. Use the following JSON
+To associate a native app with a web app, iOS requires an Apple App Site Association (AASA)
+file `apple-app-site-association.json`. Use the following JSON
 template and store it under `acme.com/.well-known/apple-app-site-association.json`:
 
 ```json
@@ -39,9 +37,9 @@ template and store it under `acme.com/.well-known/apple-app-site-association.jso
 Variables:
 
 - `APP_IDENTIFIER_PREFIX`: The iOS app identifier prefix associated with your development team in your Apple Developer
-  account.
+  account (sometimes also referred to as TeamID).
 - `BUNDLE_IDENTIFIER`: The bundle identifier associated with your iOS application. Can be found in Xcode development
-  environment.
+  environment (someimtes also referred to as BundleID).
 
 The following constraints must hold for the file:
 
@@ -53,27 +51,38 @@ The following constraints must hold for the file:
     - User-agent: *
     - Allow: /.well-known/
 
+## Binding passkeys to your own domain
+
+If you want to bind the passkeys to your own domain (e.g. `acme.com`), you need to manually change
+the [WebAuthn relying party](https://www.w3.org/TR/webauthn-2/#webauthn-relying-party) and host
+the [AASA](#apple-app-site-association-aasa) file on this domain (so
+on `acme.com/.well-known/apple-app-site-association`).
+
 ## iOS native implementation
 
-TODO
+Apple offers
+straight-forward [documentation](https://developer.apple.com/documentation/authenticationservices/public-private_key_authentication/supporting_passkeys)
+for integrating passkeys in a native iOS app. Contrary to Android / Kotlin, there is no third party library necessary
+for executing the WebAuthn / passkey requests to the WebAuthn server.
 
-## iOS WebKit implementation
+## iOS WKWebView implementation
 
-TODO
+Passkeys / WebAuthn in WKWebView only seem to work with native apps that have the web browser
+entitlement [(source)](https://developer.apple.com/forums/thread/714785).
 
-### Workaround 1: SFSafariViewController
+### Workaround: SFSafariViewController
 
-You can Redirect the browser directly to a prepared website or
-via [SFSafariViewController](https://www.rfc-editor.org/rfc/rfc8252#appendix-B) (see Android Custom Tabs for Android).
+You can redirect the browser to a prepared website or
+via [SFSafariViewController](https://www.rfc-editor.org/rfc/rfc8252#appendix-B) (see [Android Custom Tabs](./android.md#workaround-2--android-custom-tabs) for Android).
 
 ## Native app linking
 
-To link iOS Apps to Websites Apple uses Apple App Site Association (AASA) files like for
-example: https://www.facebook.com/.well-known/apple-app-site-association. To inform the iOS operating system and the app
+To link native iOS apps to web apps and allow intercepting links or accessing passwords stored in WebView Android
+uses [AASA](./ios.md#apple-app-site-association--aasa-). To inform the iOS operating system and the native app
 on which domains to look for AASA files you need to:
 
-- Enable ‘Associated Domains’ on your app identifier
-- Enable ‘Associated Domains under Signing and Capabilities (Xcode) and add your domain there (without https prefix,
+- Enable `Associated Domains` on your app identifier
+- Enable `Associated Domains` under Signing and Capabilities (Xcode) and add your domain there (without https prefix,
   just the hostname)
 
 ![AASA 1](../../../static/img/tanaschita-aasa-1.png)
@@ -81,21 +90,36 @@ on which domains to look for AASA files you need to:
 
 [Source: Tanaschita](https://tanaschita.com/20220725-quick-guide-on-associated-domains-in-ios/)
 
-- Beware: Starting from iOS14 AASA files are served from Apple CDN and caches and refreshes unregularly – it can be
-  bypassed in developer mode (see link above)
+- Beware: Starting with iOS 14 [AASA](#apple-app-site-association--aasa-) files are served from Apple CDN, cached and
+  unregularly refreshed. This can be bypassed in developer mode (see [here](https://tanaschita.com/20220725-quick-guide-on-associated-domains-in-ios))
 - In our case we need
-    - applinks:
-    - webcredentials:
+    - `applinks`: allow native apps to open links
+    - `webcredentials`: share credentials between web apps and native apps
 
-The AASA file itself has multiple sections. For us only the `webcredentials` (formerly access to keychain for
-user/password stored in browser, now also expanded to passkeys) and the `applinks` (=Universal Links) section is
+The [AASA](#apple-app-site-association--aasa-) file itself has multiple sections. For us, only the `webcredentials` (
+formerly access to keychain for user/password stored in browser, now also expanded to passkeys) and
+the `applinks` (= [Universal Links](#universal-links)) section is
 important [(see docs)](https://developer.apple.com/documentation/authenticationservices/connecting_to_a_service_with_passkeys).
 
-Technically only the `webcredentials` are needed to be able to exchange password and/or passkeys, but `applinks` need to
-be specified to intercept email magic links called Universal Links on Apple. The apps that are allowed to open them are
-identified with a string like: `Y7L2DPA5Y5.com.corbado.passkeys` (teamID.bundleID)
-The ID starts with the Team ID `Y7L2DPA5Y5` which can be found in Apple's developer portal (within the URL in the
-browser or under Membership area in the App Developer Section on developer.apple.com “Team ID”) and is then followed by
+Technically, only the `webcredentials` are needed to be able to exchange password and/or passkeys, but `applinks` need
+to
+be specified to intercept email magic links. The apps that are allowed to open them are
+identified with a string like: `Y7L2DPA5Y5.com.corbado.passkeys` (TeamID.BundleID)
+The string starts with the TeamID `Y7L2DPA5Y5`. It can be found in Apple's developer portal within the URL in the
+browser or under Membership area in the App Developer Section on [developer.apple.com](developer.apple.com) (=TeamID)
+and is then followed by
 the `bundle identifier` (=bundleID) of the app as specified in
-Xcode [(Help for the SDK)](https://tanaschita.com/20230227-passkeys-ios-developer-guide )
+Xcode [(help for the SDK)](https://tanaschita.com/20230227-passkeys-ios-developer-guide).
+
+### Custom URL schemes
+
+They allow to work with any scheme without host specification. The only thing is that the scheme must be
+unique: `your_scheme://any_host` or `corbado://any_host` (comparable
+to [Deep Links](./android.md#deep-links) in Android).
+
+### Universal Links
+
+They only work with an https scheme and specified host, entitlements and
+hosted [AASA](#apple-app-site-association--aasa-): `https://your_host` (comparable
+to [Android App Links](./android.md#android-app-links) in Android).
 
