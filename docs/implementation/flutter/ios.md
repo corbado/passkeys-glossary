@@ -106,7 +106,7 @@ to
 be specified to intercept email magic links. The apps that are allowed to open them are
 identified with a string like: `Y7L2DPA5Y5.com.corbado.passkeys` (TeamID.BundleID)
 The string starts with the TeamID `Y7L2DPA5Y5`. It can be found in Apple's developer portal within the URL in the
-browser or under Membership area in the App Developer Section on [developer.apple.com](developer.apple.com) (=TeamID)
+browser or under Membership area in the App Developer Section on [https://developer.apple.com](https://developer.apple.com) (=TeamID)
 and is then followed by
 the `bundle identifier` (=bundleID) of the app as specified in
 Xcode [(help for the SDK)](https://tanaschita.com/20230227-passkeys-ios-developer-guide).
