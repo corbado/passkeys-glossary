@@ -7,8 +7,8 @@ const darkCodeTheme = require('prism-react-renderer/themes/dracula');
 /** @type {import('@docusaurus/types').Config} */
 const config = {
     title: 'Passkeys Glossary',
-    tagline: 'This glossary helps to understand passkeys and the underlying technologies with easy-to-follow examples and simple language.',
-    favicon: 'img/favicon.ico',
+    tagline: 'This glossary aims to help understand passkeys and the underlying technologies with easy-to-follow examples and simple language.',
+    favicon: 'img/passkeys.webp',
 
     // Set the production url of your site here
     url: 'https://passkeys-auth.com',
