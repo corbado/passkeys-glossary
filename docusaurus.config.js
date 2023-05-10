@@ -131,7 +131,7 @@ const config = {
                         ],
                     },
                 ],
-                copyright: `Copyright © ${new Date().getFullYear()} Corbado GmbH. Built with Docusaurus.`,
+                copyright: `Copyright © ${new Date().getFullYear()} Corbado GmbH.`,
             },
             prism: {
                 theme: lightCodeTheme,
