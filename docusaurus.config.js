@@ -106,6 +106,10 @@ const config = {
                                 label: 'Implementation',
                                 to: '/docs/category/implementation',
                             },
+                            {
+                                label: 'Resources',
+                                to: '/docs/category/resources',
+                            },
                         ],
                     },
                     {
