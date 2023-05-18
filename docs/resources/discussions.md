@@ -4,7 +4,7 @@ sidebar_position: 2
 
 # Discussions
 
-- [Hacker News (24/04/2023)](https://news.ycombinator.com/item?id=35675567)
+- Hacker News [(24/04/2023)](https://news.ycombinator.com/item?id=35675567)
     - Why WebAuthn (passkeys' underlying technology) doesn't take off as expected. The main arguments in the comments:
       Many edge cases and novelty for devs: 
       - There's so many ways use this tech and so many cases and flows that you have
