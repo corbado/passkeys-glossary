@@ -10,3 +10,5 @@
   - Authentication process success rate:
     - Passwords: 13.8%
     - Passkeys: 63.8%
+- Consumer preferences regarding different login methods ([FIDO Alliance, 18/05/2023](https://media.fidoalliance.org/wp-content/uploads/2023/05/FIDO-Alliance-consumer-attitudes-report-May-2023.pdf))
+- UX recommendations for passkeys ([FIDO Alliance, 31/05/2023](https://fidoalliance.org/ux-guidelines-for-passkey-creation-and-sign-ins/))
