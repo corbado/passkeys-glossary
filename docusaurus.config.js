@@ -164,12 +164,12 @@ const config = {
 
                 //..
             },
-            scripts: [{
-                src: '/matomo.js',
-                async: true,
-                defer: true
-            }]
         }),
+    scripts: [{
+        src: '/matomo.js',
+        async: true,
+        defer: true
+    }]
 };
 
 module.exports = config;
