@@ -169,6 +169,10 @@ const config = {
         src: '/js/matomo.js',
         async: true,
         defer: true
+    }, {
+        src: '/js/matomo-tag-manager.js',
+        async: true,
+        defer: true
     }]
 };
 
