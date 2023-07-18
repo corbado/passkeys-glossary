@@ -166,7 +166,7 @@ const config = {
             },
         }),
     scripts: [{
-        src: 'js/matomo.js',
+        src: '/js/matomo.js',
         async: true,
         defer: true
     }]
