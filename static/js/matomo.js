@@ -5,6 +5,7 @@ var _paq = window._paq = window._paq || [];
 /* tracker methods like "setCustomDimension" should be called before "trackPageView" */
 _paq.push(["setCookieDomain", "*.passkeys-auth.com"]);
 _paq.push(["setDomains", ["*.passkeys-auth.com", "*.passkeys-auth.de", "*.passkeys-glossary.pages.dev"]]);
+_paq.push(["enableCrossDomainLinking"]);
 _paq.push(['trackPageView']);
 _paq.push(['enableLinkTracking']);
 (function () {
