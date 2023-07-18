@@ -163,7 +163,12 @@ const config = {
                 searchPagePath: 'search',
 
                 //..
-            }
+            },
+            scripts: [{
+                src: '/matomo.js',
+                async: true,
+                defer: true
+            }]
         }),
 };
 
