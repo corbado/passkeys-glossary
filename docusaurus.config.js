@@ -120,7 +120,7 @@ const config = {
                         items: [
                             {
                                 label: 'Slack',
-                                href: 'https://join.slack.com/t/corbado/shared_invite/zt-1b7867yz8-V~Xr~ngmSGbt7IA~g16ZsQ',
+                                href: 'https://bit.ly/passkeys-community',
                             },
                             {
                                 label: 'X',
