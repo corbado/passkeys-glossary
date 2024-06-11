@@ -23,10 +23,10 @@ const FeatureList = [
   },
   {
     title: 'Based on open standards',
-    Svg: require('@site/static/img/FIDO-Allianz_logo.svg').default,
+    Svg: require('@site/static/img/FIDO-Alliance_logo.svg').default,
     description: (
       <>
-       Developed by the <a href="https://fidoalliance.org/">FIDO alliance</a>, passkeys are backed by the largest companies.
+       Developed by the <a href="https://fidoalliance.org/">FIDO Alliance</a>, passkeys are backed by the largest companies.
       </>
     ),
   },
