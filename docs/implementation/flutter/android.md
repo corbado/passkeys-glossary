@@ -168,7 +168,7 @@ between websites and apps, however, until we complete migrating our logic to acc
 both `delegate_permission/common.handle_all_urls` and `delegate_permission/common.get_login_creds`.”*
 
 This will lead  to [Android App Links](#android-app-links) being intercepted and opened in the native app (not
-[Deep Links](#deep-links) or historic web links, where native aps could just arbitrary register to listen to URLs.
+[Deep Links](#deep-links) or historic web links, where native apps could just arbitrary register to listen to URLs.
 
 See the overview of different link types:
 
