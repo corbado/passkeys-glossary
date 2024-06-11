@@ -39,7 +39,7 @@ Variables:
 - `APP_IDENTIFIER_PREFIX`: The iOS app identifier prefix associated with your development team in your Apple Developer
   account (sometimes also referred to as TeamID).
 - `BUNDLE_IDENTIFIER`: The bundle identifier associated with your iOS application. Can be found in Xcode development
-  environment (someimtes also referred to as BundleID).
+  environment (sometimes also referred to as BundleID).
 
 The following constraints must hold for the file:
 
