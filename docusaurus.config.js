@@ -81,6 +81,9 @@ const config = {
                         label: 'Docs',
                     },
                     {href: 'https://passkeys.eu', label: 'Demo', position: 'left'},
+                    {href: 'https://state-of-passkeys.io/', label: 'State of Passkeys', position: 'left'},
+                    {href: 'https://www.passkeys-analyzer.io/', label: 'Analyzer', position: 'left'},
+                    {href: 'https://www.passkeys-debugger.io/', label: 'Debugger', position: 'left'},
                     {
                         href: 'https://github.com/corbado',
                         label: 'GitHub',
@@ -120,17 +123,45 @@ const config = {
                                 href: 'https://join.slack.com/t/corbado/shared_invite/zt-1b7867yz8-V~Xr~ngmSGbt7IA~g16ZsQ',
                             },
                             {
-                                label: 'Twitter',
-                                href: 'https://twitter.com/corbado_tech',
+                                label: 'X',
+                                href: 'https://x.com/corbadotech',
+                            },
+                            {
+                                label: 'LinkedIn',
+                                href: 'https://www.linkedin.com/company/corbado',
+                            },
+                            {
+                                label: 'GitHub',
+                                href: 'https://github.com/corbado',
+                            },
+                            {
+                                label: 'Medium',
+                                href: 'https://medium.com/@corbado_tech',
+                            },
+                            {
+                                label: 'DEV',
+                                href: 'https://dev.to/corbado',
                             },
                         ],
                     },
                     {
-                        title: 'More',
+                        title: 'Developer Tools',
                         items: [
                             {
-                                label: 'GitHub',
-                                href: 'https://github.com/corbado',
+                                label: 'Passkeys Demo',
+                                to: 'https://passkeys.eu/',
+                            },
+                            {
+                                label: 'State of Passkeys',
+                                to: 'https://state-of-passkeys.io/',
+                            },
+                            {
+                                label: 'Passkeys Analyzer',
+                                to: 'https://www.passkeys-analyzer.io/',
+                            },
+                            {
+                                label: 'Passkeys Debugger',
+                                to: 'https://www.passkeys-debugger.io/',
                             },
                         ],
                     },
