@@ -154,7 +154,7 @@ example:
 In this case, the Android app would access `https://www.example.com/.well-known/assetlinks.json`
 and `https://www.example.net/.well-known/assetlinks.json` to check whether the right specification has been laid out in
 the `assetlinks.json`. For intercepting links in mobile browsers the `delegate_permission/common.handle_all_urls` would
-be needed for namespace `web`. For intercepting links on any other native app (e.g. Gmai or other third party
+be needed for namespace `web`. For intercepting links on any other native app (e.g. Gmail or other third party
 apps) `android_app` is needed.
 
 In general, there are two namespaces `web` and `android_app` to access password credentials and/or passkeys
