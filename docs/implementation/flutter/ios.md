@@ -39,7 +39,7 @@ Variables:
 - `APP_IDENTIFIER_PREFIX`: The iOS app identifier prefix associated with your development team in your Apple Developer
   account (sometimes also referred to as TeamID).
 - `BUNDLE_IDENTIFIER`: The bundle identifier associated with your iOS application. Can be found in Xcode development
-  environment (someimtes also referred to as BundleID).
+  environment (sometimes also referred to as BundleID).
 
 The following constraints must hold for the file:
 
@@ -91,7 +91,7 @@ on which domains to look for AASA files you need to:
 [Source: Tanaschita](https://tanaschita.com/20220725-quick-guide-on-associated-domains-in-ios/)
 
 - Beware: Starting with iOS 14 [AASA](#apple-app-site-association--aasa-) files are served from Apple CDN, cached and
-  unregularly refreshed. This can be bypassed in developer mode (see [here](https://tanaschita.com/20220725-quick-guide-on-associated-domains-in-ios))
+  irregularly refreshed. This can be bypassed in developer mode (see [here](https://tanaschita.com/20220725-quick-guide-on-associated-domains-in-ios))
 - In our case we need
     - `applinks`: allow native apps to open links
     - `webcredentials`: share credentials between web apps and native apps
