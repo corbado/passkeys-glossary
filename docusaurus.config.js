@@ -163,6 +163,10 @@ const config = {
                                 label: 'Passkeys Debugger',
                                 to: 'https://www.passkeys-debugger.io/',
                             },
+                            {
+                                label: 'New Passkeys Glossary',
+                                to: 'https://www.corbado.com/glossary',
+                            },
                         ],
                     },
                 ],
