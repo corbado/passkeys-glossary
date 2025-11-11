@@ -4,6 +4,12 @@ sidebar_position: 2
 
 # Android
 
+:::danger
+
+This web page might be outdated, please refer to this [site for an up-to-date guide on native app passkeys](https://www.corbado.com/blog/native-app-passkeys).
+
+:::
+
 The implementation for Flutter Android is still very similar to native Android with Kotlin Flutter, as there is no
 good Flutter SDK for passkeys / WebAuthn yet.
 

@@ -4,6 +4,12 @@ sidebar_position: 1
 
 # Overview
 
+:::danger
+
+This web page might be outdated, please refer to this [site for an up-to-date guide on native app passkeys](https://www.corbado.com/blog/native-app-passkeys).
+
+:::
+
 The following table gives an overview of the different names and settings of native Android (Kotlin), native iOS (Swift)
 or Flutter (Dart) for iOS / Android apps.
 

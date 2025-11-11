@@ -4,8 +4,19 @@ sidebar_position: 3
 
 # iOS
 
+
+:::danger
+
+This web page might be outdated, please refer to this [site for an up-to-date guide on native app passkeys](https://www.corbado.com/blog/native-app-passkeys).
+
+:::
+
 The implementation for Flutter iOS is still very similar to native iOS with Swift, as there is no good Flutter SDK for
 Passkeys / WebAuthn yet.
+
+
+
+
 
 ## Origin
 
